@@ -2,29 +2,23 @@
 """ENTER YOUR SOLUTION HERE!"""
 
 
+def isPrime(n):
+    for i in range(2, n-1):
+        if (n % i == 0):
+            return False
+    return True
 
 
-from tabnanny import check
 def primes(number_of_primes):
 
     list = []
 
-    i = 1
-
-    currentNumber = 2
-
-    list.append(2)
-
-    while i <= number_of_primes:
-        currentNumber = currentNumber + 1
-        x = 2
-        while x < currentNumber:
-            if x == currentNumber:
-                list.append(currentNumber)
-            elif currentNumber % x:
+    while True:
+        if (isPrime(i)):
+            list.append(i)
+            if (len(list) == number_of_primes):
                 break
-
-        i = i + 1
+        i += 1
 
     print(list)
     return list
